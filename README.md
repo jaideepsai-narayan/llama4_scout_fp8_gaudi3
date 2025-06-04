@@ -82,6 +82,13 @@ Output:
 <img src="https://github.com/user-attachments/assets/4ba57fb9-e62c-4d7e-a237-08b3aafeb9d0" width="900"/>
 
 
+Memory Usage:
+
+<img src="https://github.com/user-attachments/assets/29e9f175-6466-4e1c-bf2f-428d01d9b4c0" width="500"/>
+
+
+
+
 
 
 

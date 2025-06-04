@@ -63,5 +63,23 @@ QUANT_CONFIG=measure.json PT_HPU_LAZY_MODE=1 python test_measure.py --model_id ~
 After running the above command and setting tensor_parallel to 2, the output appears as shown below.
 ![image](https://github.com/user-attachments/assets/c8cdc0c7-42e6-4514-b77d-7ba53d1beb83)
 
+Quantization Test
+
+Update test_vllm_quant.py to set tensor_parallel size. For example, since I want to run on 2 cards, I changed tensor_parallel from 8 to 2.
+```
+# quantization
+QUANT_CONFIG=quant.json PT_HPU_LAZY_MODE=1 python test_vllm_quant.py --model_id ~/models/Llama-4-Scout-17B-16E-Instruct/
+```
+After submitting the image, I received the following output
+
+Input Image:
+
+![image](https://github.com/user-attachments/assets/8d8b7da3-08d7-41e9-b55f-77657b372545)
+
+Output:
+
+![image](https://github.com/user-attachments/assets/4ba57fb9-e62c-4d7e-a237-08b3aafeb9d0)
+
+
 
 

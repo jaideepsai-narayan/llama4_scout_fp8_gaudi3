@@ -1,4 +1,4 @@
-# Running Llama4 Scout-17B with FP8 Quantization on 2 Cards Using Intel® Gaudi® 2 via vLLM (Offline Serving)
+# Running Llama4 Scout-17B with FP8 Quantization on 2 Cards Using Intel® Gaudi® 3 via vLLM (Offline Serving)
 
 Running inference with Llama4 Scout using FP8 quantization on Gaudi3.
 

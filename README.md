@@ -1,15 +1,15 @@
 # Running Llama4 Scout-17B with FP8 Quantization on 2 Cards Using Intel® Gaudi® 2 via vLLM (Online Serving)
 
-Inferencing llama4 Scout with fp8 quantization on gaudi3
+Running inference with Llama4 Scout using FP8 quantization on Gaudi3.
 
-pull the docker images with help of below command:
+### pull the docker images with help of below command:
 ```
 docker pull vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0:latest
 docker run -idt --runtime=habana -e HABANA_VISIBLE_DEVICES=all --cap-add=sys_nice --net=host --ipc=host <image>
 docker exec -it <container_id> /bin/bash
 ```
 
-Download Scout-17B llama4
+### Download Scout-17B llama4
 
 ```
 cd ~/
@@ -20,7 +20,7 @@ huggingface-cli download --local-dir Llama-4-Scout-17B-16E-Instruct ${MODEL} --t
 ```
 
 
-Cloning the vLLM repository and installing dependencies
+### Cloning the vLLM repository and installing dependencies
 ```
 cd ~/
 
@@ -36,7 +36,7 @@ pip install git+https://github.com/HabanaAI/vllm-hpu-extension.git@145c63d
 pip install pydantic msgspec cachetools cloudpickle psutil zmq blake3 py-cpuinfo aiohttp openai uvloop fastapi uvicorn watchfiles partial_json_parser python-multipart gguf llguidance prometheus_client numba compressed_tensors datasets
 ```
 
-To run FP8 Scout-17B llama4 model on 2 cards, please follow the below steps:
+### To run FP8 Scout-17B llama4 model on 2 cards, please follow the below steps:
 
 Review the tensor_parallel size setting in the script, as it controls which quantization files are generated and on how many cards they are saved.
 
@@ -44,7 +44,7 @@ Update test_measure.py to set tensor_parallel size. For example, since I want to
 
 ![image](https://github.com/user-attachments/assets/1c6dc2b4-c77a-4b50-94ca-31dc8ecced9f)
 
-Quantization setup
+### Quantization setup
 ```
 # install specific INC
 pip uninstall -y neural-compressor neural-compressor-pt
@@ -63,7 +63,7 @@ QUANT_CONFIG=measure.json PT_HPU_LAZY_MODE=1 python test_measure.py --model_id ~
 After running the above command and setting tensor_parallel to 2, the output appears as shown below.
 ![image](https://github.com/user-attachments/assets/c8cdc0c7-42e6-4514-b77d-7ba53d1beb83)
 
-Quantization Test
+### Quantization Test
 
 Update test_vllm_quant.py to set tensor_parallel size. For example, since I want to run on 2 cards, I changed tensor_parallel from 8 to 2.
 ```

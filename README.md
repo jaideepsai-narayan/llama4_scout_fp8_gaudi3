@@ -42,7 +42,8 @@ Review the tensor_parallel size setting in the script, as it controls which quan
 
 Update test_measure.py to set tensor_parallel size. For example, since I want to run on 2 cards, I changed tensor_parallel from 8 to 2.
 
-![image](https://github.com/user-attachments/assets/1c6dc2b4-c77a-4b50-94ca-31dc8ecced9f)
+<img src="https://github.com/user-attachments/assets/1c6dc2b4-c77a-4b50-94ca-31dc8ecced9f" width="700"/>
+
 
 ### Quantization setup
 ```
@@ -61,7 +62,7 @@ cd ~/vllm-fork/llama4-scripts
 QUANT_CONFIG=measure.json PT_HPU_LAZY_MODE=1 python test_measure.py --model_id ~/models/Llama-4-Scout-17B-16E-Instruct/
 ```
 After running the above command and setting tensor_parallel to 2, the output appears as shown below.
-![image](https://github.com/user-attachments/assets/c8cdc0c7-42e6-4514-b77d-7ba53d1beb83)
+<img src="https://github.com/user-attachments/assets/c8cdc0c7-42e6-4514-b77d-7ba53d1beb83" width="900"/>
 
 ### Quantization Test
 
@@ -74,11 +75,12 @@ After submitting the image, I received the following output
 
 Input Image:
 
-![image](https://github.com/user-attachments/assets/8d8b7da3-08d7-41e9-b55f-77657b372545)
+<img src="https://github.com/user-attachments/assets/8d8b7da3-08d7-41e9-b55f-77657b372545" width="500"/>
 
 Output:
 
-![image](https://github.com/user-attachments/assets/4ba57fb9-e62c-4d7e-a237-08b3aafeb9d0)
+<img src="https://github.com/user-attachments/assets/4ba57fb9-e62c-4d7e-a237-08b3aafeb9d0" width="900"/>
+
 
 
 

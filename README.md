@@ -2,7 +2,7 @@
 
 Running inference with Llama4 Scout using FP8 quantization on Gaudi3.
 
-### pull the docker images with help of below command:
+### To pull the Docker image, use the command below:
 ```
 docker pull vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0:latest
 docker run -idt --runtime=habana -e HABANA_VISIBLE_DEVICES=all --cap-add=sys_nice --net=host --ipc=host <image>
